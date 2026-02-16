@@ -1,0 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemyDamage : MonoBehaviour
+{
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("Player"))
+        {
+            Debug.Log("Ay! " + collision.gameObject);
+            Debug.Log("el objeto: " + collision.gameObject + " se ha hecho daño");
+            //Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<PlayerRespawn>().PlayerDamaged();
+        }
+    }
+
+
+}
