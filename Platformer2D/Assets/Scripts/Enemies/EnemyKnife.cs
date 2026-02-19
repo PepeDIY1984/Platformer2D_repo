@@ -6,7 +6,10 @@ public class EnemyKnife : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        animator.Play("enemyKnife");
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            animator.Play("enemyKnife");
+        }
     }
 
 }
