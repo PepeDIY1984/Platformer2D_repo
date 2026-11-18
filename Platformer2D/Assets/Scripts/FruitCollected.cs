@@ -16,7 +16,7 @@ public class FruitCollected : MonoBehaviour
             Destroy(gameObject, 0.5f);                                      
             GetComponent<Collider2D>().enabled = false;
             SceneController.fruitsCollected++;                              
-            GameObject.Find("ControlCenter").GetComponent<SceneController>().checkFruitsRemaining();
+            GameObject.Find("GameManager").GetComponent<SceneController>().checkFruitsRemaining();
 
             sound.Play(); 
         }

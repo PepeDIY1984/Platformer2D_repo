@@ -50,13 +50,24 @@ public class SceneController : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("Level001");
-        buttonSound.Play();
+        if (buttonSound)
+        {
+            buttonSound.Play();
+        }
     }
 
     public void quitGame() //Salir del juego, solo funciona al montar el juego en un ejecutable
     {
-        buttonSound.Play();
+        if (buttonSound)
+        {
+            buttonSound.Play();
+        }
         Application.Quit();
+    }
+
+    public void CambiarVolumen(float volumen)
+    {
+        AudioListener.volume = volumen;
     }
 }
 
